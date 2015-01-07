@@ -14,7 +14,7 @@ var paths = {
 
 function reBundle (bundler) {
   return bundler.bundle().pipe(source("bundle.js"))
-  .pipe(gulp.dest('./public'))
+  .pipe(gulp.dest('./public/js'))
     .on('error', function () {
       console.log('Browserify Error');
     }
@@ -59,17 +59,6 @@ gulp.task('scripts', function () {
   var bundler = initBundler();
   return reBundle(bundler);
 });
-/*
-gulp.task('watch-scripts', function () {
-  var bundler = initBundler();
-  bundler = watchify(bundler);
-  bundler.on('update', function () {
-    reBundle(bundler);
-  });
-
-  return reBundle(bundler);
-});
-*/
 
 gulp.task('watch', function () {
   var bundler = initBundler();

@@ -1,6 +1,10 @@
 # hapi-react-router 
 
-The best plugin ever.
+Includes example based on isomorphic-react-template 
+
+## Using example
+
+gulp scripts && gulp develop
 
 ## Install
 

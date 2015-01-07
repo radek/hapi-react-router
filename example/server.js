@@ -32,7 +32,19 @@ server.route({
   path: '/js/{param*}',
   handler: {
     directory: {
-      path: './public',
+      path: './public/js',
+      listing: true,
+      index: true
+    }
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/images/{param*}',
+  handler: {
+    directory: {
+      path: './public/images',
       listing: true,
       index: true
     }
