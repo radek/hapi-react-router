@@ -1,0 +1,72 @@
+{
+  "name": "hapi-react-router",
+  "description": "The best plugin ever.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/radek/hapi-react-router",
+  "bugs": "https://github.com/radek/hapi-react-router/issues",
+  "license": "MIT",
+  "main": "index",
+  "author": {
+    "name": "Radek"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radek/hapi-react-router"
+  },
+  "keywords": [
+    "hapi",
+    "plugin"
+  ],
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "browserify": "^7.0.2",
+    "hoek": "2.10.0",
+    "node-jsx": "^0.12.4",
+    "react": "^0.12.1",
+    "react-router": "^0.11.6",
+    "reactify": "^0.17.1",
+    "watchify": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-util": "2.2.16",
+    "gulp-bump": "^0.1.8",
+    "gulp-jscs": "^0.4.2",
+    "gulp-jshint": "^1.5.5",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-istanbul": "^0.2.2",
+    "jshint-stylish": "^0.2.0",
+    "gulp-load-plugins": "^0.5.1",
+    "gulp-plumber": "^0.6.2",
+    "gulp-mocha": "^1.0.0",
+    "hapi": "8.0.0"
+  },
+  "peerDependencies": {
+    "hapi": ">=2.x.x"
+  },
+  "engines": {
+    "node": ">=0.10.22"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "browserify": {
+     "transform": [
+      [
+        "reactify",
+        {
+          "es6": false
+        }
+      ]
+    ]
+  }
+}
