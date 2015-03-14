@@ -1,6 +1,7 @@
 node_modules/
 temp/
 public/
+coverage
 npm-debug.log
 .DS_Store
 .idea
