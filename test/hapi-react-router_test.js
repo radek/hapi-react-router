@@ -20,6 +20,11 @@ describe('hapi-react-router', function() {
     }
   }];
 
+  var options = {
+    rootComponent: '../example/components/Html.jsx',
+    reactRoutes: '../example/routes.jsx'
+  };
+
   beforeEach(function () {
     server = new Hapi.Server();
     server.connection({ port: 8000});
@@ -27,7 +32,7 @@ describe('hapi-react-router', function() {
   });
 
   it('loads successfully', function(done) {
-    server.register(plugin, function(err) {
+    server.register({register: plugin, options: options}, function(err) {
       assert.ok(!err);
       done();
     });
@@ -68,7 +73,7 @@ describe('hapi-react-router', function() {
   it('adds react-route', function(done) {
     var table;
 
-    server.register(plugin, function() {
+    server.register({register: plugin, options: options}, function() {
 
       var exrouteHandler = React.createFactory(routes.props.handler);
       var exroute = {
@@ -84,10 +89,7 @@ describe('hapi-react-router', function() {
       table = server.table();
       assert.ok(table);
       assert.equal(table.length, 1);
-      console.log('HANDLER: ', table[0].table[1].path);
-      assert.equal(table[0].table[1].path, '/places');
-      console.log('HANDLER: ', table[0].table[1].settings.handler);
-//      assert.equal(table[0].table[1].handler, );
+      assert.equal(table[0].table[1].path, '/');
 
       done();
     });

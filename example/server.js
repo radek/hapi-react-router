@@ -52,8 +52,8 @@ server.route({
 });
 
 var options = {
-  rootComponent: 'components/Html.jsx',
-  reactRoutes: 'routes.jsx'
+  rootComponent: '../example/components/Html.jsx',
+  reactRoutes: '../example/routes.jsx'
 };
 
 server.register({register: plugin, options: options}, function( err ) {
@@ -61,18 +61,6 @@ server.register({register: plugin, options: options}, function( err ) {
     throw err;
   }
 });
-
-var reactRoutesHandler = React.createFactory(routes.props.handler);
-
-var rroute = {
-  method: 'GET',
-  path: routes.props.path,
-  handler: function(request, reply) {
-    return reply(reactRoutesHandler());
-  }
-};
-
-server.route(rroute);
 
 server.start(function () {
   console.log('Server running at: ' + server.info.uri);
