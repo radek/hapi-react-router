@@ -8,5 +8,5 @@ gulp scripts && gulp develop
 
 ## License
 
-Copyright (c) 2014 Radek. Licensed under the MIT license.
+Copyright (c) 2014, 2015 Radek Czarnecki. Licensed under the GNU GPL.
 
